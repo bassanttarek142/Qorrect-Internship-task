@@ -1,0 +1,477 @@
+/* Ensure consistent font and base styling */
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background-color: #fff;
+}
+
+/* Container for the entire form */
+.basic-info-container {
+    width: calc(100% - 140px);
+    background-color: #fff;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 20px 30px 20px 110px;
+    padding: 10px;
+}
+
+/* Special margin and padding for the first container */
+.first-container {
+    margin-top: 180px;
+    padding-top: 15px;
+}
+
+/* Header for each section of the form */
+.basic-info-container .header {
+    font-size: 14px;
+    font-weight: 700;
+    padding: 15px;
+    color: #465061;
+    background-color: #fff;
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 10px;
+}
+
+/* Content area of the form */
+.basic-info-container .content {
+    padding: 15px;
+    margin-bottom: 5px;
+}
+
+/* Row styling for flexbox layout */
+.basic-info-container .row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Input boxes and upload photo styling */
+.basic-info-container .input-box,
+.basic-info-container .upload-photo-box {
+    margin-bottom: 15px;
+}
+
+/* Label styling for input fields */
+.basic-info-container .input-box label,
+.basic-info-container .upload-photo-box label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+/* Input field styling */
+.basic-info-container .input-box input[type="text"],
+.basic-info-container .input-box input[type="email"],
+.basic-info-container .input-box input[type="date"],
+.basic-info-container .input-box input[type="password"],
+.basic-info-container .upload-photo-box input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    color: #465061;
+    font-size: 14px;
+    font-weight: 600;
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* Upload photo container styling */
+.basic-info-container .upload-photo-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Circular container for uploaded photo */
+.basic-info-container .upload-photo-circle {
+    padding: 45px;
+    background-color: #f1f2f4;
+    border-radius: 50%;
+    width: 180px;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #c0c6d2;
+    border: 5px solid #fff;
+    box-shadow: 0 0 0 4px #f1f2f4;
+    margin-bottom: 20px;
+}
+
+/* Hover effect for upload photo circle */
+.basic-info-container .upload-photo-circle:hover {
+    border-color: #007bff;
+}
+
+/* Image inside the photo circle */
+.basic-info-container .upload-photo-circle img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+/* Icon inside the photo circle */
+.basic-info-container .upload-photo-circle i {
+    font-size: 50px;
+    color: #ccc;
+}
+
+/* Upload label wrapper styling */
+.basic-info-container .upload-label-wrapper {
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Hover effect for upload label wrapper */
+.basic-info-container .upload-label-wrapper:hover {
+    border-color: #007bff;
+}
+
+/* Upload label styling */
+.basic-info-container .upload-label {
+    color: #007bff;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* Hover effect for upload label */
+.basic-info-container .upload-label:hover {
+    color: #0056b3;
+}
+
+/* Styling for optional info text */
+.info-option {
+    color: #6c757d !important;
+}
+
+/* Styling for category option labels */
+.category-option {
+    font-size: 12px;
+    font-weight: 600;
+    color: #a0aabb;
+}
+
+/* Error message styling */
+.error-message {
+    color: #bf5c4d;
+    font-size: 12px;
+    line-height: normal;
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+}
+
+/* Error message icon */
+.error-message i {
+    margin-right: 5px;
+}
+
+/* Role label wrapper styling */
+.role-label-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+/* Invalid input field styling */
+.invalid {
+    border-color: #bf5c4d;
+}
+
+/* Gender options styling */
+.gender-options {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Individual gender option styling */
+.gender-options label {
+    margin-right: 25px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+/* Checkbox styling */
+.gender-options input[type="checkbox"] {
+    top: 0;
+    margin-right: 20px;
+    width: 22px;
+    height: 22px;
+}
+
+/* Container for upload section */
+.upload-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Placeholder styling for date inputs */
+.input-box input[type="date"]::placeholder {
+    color: transparent;
+}
+
+/* Date input text styling */
+.input-box input[type="date"]::-webkit-datetime-edit {
+    font-size: 1rem;
+}
+
+/* Date input spinner and calendar icon styling */
+.input-box input[type="date"]::-webkit-inner-spin-button,
+.input-box input[type="date"]::-webkit-calendar-picker-indicator {
+    font-size: 1rem;
+}
+
+/* Calendar picker icon scaling */
+.input-box input[type="date"]::-webkit-calendar-picker-indicator {
+    transform: scale(1.5);
+}
+
+/* Role options container styling */
+.roles {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* Individual role item styling */
+.role-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+/* Checkbox styling for roles */
+.role-item input[type="checkbox"] {
+    margin-right: 8px;
+    width: 20px;
+    height: 20px;
+}
+
+/* Disabled role item styling */
+.role-item.disabled {
+    cursor: not-allowed;
+}
+
+/* Disabled checkbox styling */
+.role-item.disabled input[type="checkbox"] {
+    cursor: not-allowed;
+}
+
+/* Examinee message styling */
+.examinee-message {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #e7f3ff;
+    border: 1px solid #aad4f5;
+    color: #2c7bbf;
+    border-radius: 4px;
+    margin-top: 5px;
+}
+
+/* Examinee message icon styling */
+.examinee-icon {
+    margin-right: 10px;
+    color: #2c7bbf;
+    font-size: 18px;
+}
+
+/* Security message styling */
+.security-message {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    background-color: #e7f3ff;
+    border: 1px solid #aad4f5;
+    color: #2c7bbf;
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
+
+/* Password toggle button styling */
+.password-toggle {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Input group styling */
+.input-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Adjust padding for password input fields */
+.input-box .input-group input[type="password"] {
+    width: 100%;
+    padding-right: 10px; /* Space for the eye icon */
+    font-size: 14px;
+}
+
+/* Clear and generate button styling */
+.btn-clear {
+    background-color: transparent;
+    border: 1px solid #007bff;
+    color: #007bff;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    text-align: center;
+    height: 38px; /* Ensure the button is the same height as the input fields */
+    width: 60px; /* Smaller width for Clear button */
+}
+
+.btn-generate {
+    background-color: transparent;
+    border: 1px solid #007bff;
+    color: #007bff;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 5px 15px;
+    border-radius: 4px;
+    text-align: center;
+    height: 38px; /* Ensure the button is the same height as the input fields */
+    width: 180px; /* Larger width for Generate Password button */
+}
+
+/* Hover effect for clear and generate buttons */
+.btn-clear:hover,
+.btn-generate:hover {
+    color: #0056b3;
+    border-color: #0056b3;
+}
+
+/* Checkbox label styling */
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* Checkbox styling */
+.checkbox-label input[type="checkbox"] {
+    margin-right: 10px;
+    width: 16px;
+    height: 16px;
+}
+
+/* Button box container styling */
+.button-box {
+    display: flex;
+    justify-content: flex-end;
+    padding: 5px 10px;
+    gap: 10px;
+    width: 100%;
+}
+
+/* User Header for Create User Component */
+.user-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    background-color: white;
+    border-bottom: 3px solid #e0e0e0;
+    width: calc(100% - 80px);
+    position: fixed;
+    left: 80px;
+    top: 70px;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    z-index: 100;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Title inside the User Header */
+.user-header h2 {
+    font-size: 14px;
+    font-weight: 700;
+    color: #465061;
+    margin: 0;
+}
+
+/* Action buttons inside the User Header */
+.user-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.user-actions .btn {
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 4px;
+    padding: 8px 15px;
+}
+
+/* Save Button Styling */
+.user-actions .save-action-btn {
+    background-color: #007bff;
+    color: white;
+    border: 1px solid #007bff;
+}
+
+.user-actions .save-action-btn:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+/* Cancel Button Styling */
+.user-actions .cancel-action-btn {
+    background-color: white;
+    color: #6c757d;
+    border: 1px solid #6c757d;
+}
+
+.user-actions .cancel-action-btn:hover {
+    background-color: #e2e6ea;
+    color: #5a6268;
+    border-color: #5a6268;
+}
+
+.main-content {
+    margin-top: 120px;
+    margin-left: 20px;
+    margin-right: 20px;
+    box-sizing: border-box;
+}
+
+/* Specific styling for aligning buttons and inputs in the security section */
+.security-row {
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+.security-row .input-box {
+    flex: 1;
+}
+
+.security-row .btn-clear {
+    flex: 0 0 60px;
+}
+
+.security-row .btn-generate {
+    flex: 0 0 130px;
+    text-align: center;
+}

@@ -1,0 +1,134 @@
+.sidebar {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  width: 80px;
+  height: calc(100% - 70px);
+  background-color: #fff;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  overflow-y: auto; /* Enable vertical scrolling */
+  transition: width 0.3s ease;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar.open {
+  width: 250px;
+}
+
+.sidebar-nav {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1;
+  overflow-y: auto; /* Allow the navigation items to scroll */
+}
+
+.sidebar-nav li {
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: justify-content 0.3s ease;
+  border-top: none;
+  border-bottom: none;
+}
+
+.sidebar.open .sidebar-nav li {
+  justify-content: flex-start;
+}
+
+.sidebar-nav li a {
+  display: flex;
+  align-items: center;
+  color: #A0AEC0;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.3s ease;
+}
+
+.sidebar-nav li a i {
+  margin-right: 0;
+  font-size: 22px;
+  color: #A0AEC0;
+  transition: color 0.3s ease;
+}
+
+.sidebar.open .sidebar-nav li a i {
+  margin-right: 10px;
+}
+
+.sidebar-nav li a:hover i,
+.sidebar-nav li a.active i {
+  color: #007BFF;
+}
+
+.sidebar-nav li a:hover,
+.sidebar-nav li a.active {
+  color: #007BFF;
+}
+
+.sidebar-nav li a span {
+  display: none;
+}
+
+.sidebar.open .sidebar-nav li a span {
+  display: inline;
+}
+
+.sidebar-nav li a:hover {
+  background-color: #f4f4f4;
+}
+
+.sidebar-nav li.category {
+  padding: 8px 15px;
+  font-weight: bold;
+  color: #A0AEC0;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+/* Version QA specific styling */
+.sidebar-nav li.version-qa {
+  margin-top: auto; /* Push to the bottom */
+  padding: 8px 15px;
+  font-weight: 200; /* Set to 200 */
+  color: #A0AEC0;
+  text-transform: uppercase;
+  font-size: 10px; /* Decreased font size */
+  letter-spacing: 1px;
+  border-top: 1px solid #e0e0e0; /* Separate from the last category */
+  text-align: center; /* Center align text when collapsed */
+}
+
+.sidebar-footer {
+  padding: 5px 10px;
+  color: #A0AEC0;
+  font-size: 8px; /* Decreased font size */
+  text-align: center;
+  border-top: 1px solid #e0e0e0;
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: visible;
+}
+
+.sidebar-footer span {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+
+.sidebar:not(.open) .sidebar-footer {
+  width: 100%;
+}
+
+.sidebar:not(.open) .sidebar-footer span {
+  display: inline-block;
+  font-size: 8px; /* Decreased font size */
+  text-align: center;
+  white-space: nowrap;
+}

@@ -1,0 +1,23 @@
+<div class="user-header">
+  <h2>Users ({{ userCount }})</h2>
+  <div class="user-actions">
+    <button
+      class="btn import-action-btn btn-outline-primary"
+      (click)="importUsers()"
+    >
+      Import
+    </button>
+    <button class="btn create-user-btn" [routerLink]="['/users/create-user']">
+      Create User
+    </button>
+  </div>
+</div>
+
+<!-- Navigation within a <nav> element -->
+<nav>
+  <a class="nav-link" [routerLink]="['/users/activate']">Active</a>
+  <a class="nav-link" [routerLink]="['/users/deactivated']">Deactivated</a>
+</nav>
+
+<!-- Router outlet to display the routed components -->
+<router-outlet></router-outlet>

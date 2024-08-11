@@ -1,0 +1,381 @@
+<div class="user-header">
+  <h2>Create New User</h2>
+  <div class="user-actions">
+    <button class="btn save-action-btn" (click)="saveUser()">Save</button>
+    <button class="btn cancel-action-btn" routerLink="/users">Cancel</button>
+  </div>
+</div>
+
+<!-- First section with larger margin at the top -->
+<div class="basic-info-container first-container">
+  <div class="header">Basic Information</div>
+  <div class="content">
+    <div class="row">
+      <div class="col-md-8 col-12">
+        <div class="row">
+          <div class="col-md-6 col-12">
+            <div class="input-box">
+              <label for="first-name">First name</label>
+              <input
+                type="text"
+                id="first-name"
+                name="first-name"
+                placeholder="Enter first name"
+                (blur)="validateField($event)"
+                [class.invalid]="!validations.firstName"
+              />
+              <div class="error-message" *ngIf="!validations.firstName">
+                This field is required
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-12">
+            <div class="input-box">
+              <label for="last-name">Last name</label>
+              <input
+                type="text"
+                id="last-name"
+                name="last-name"
+                placeholder="Enter last name"
+                (blur)="validateField($event)"
+                [class.invalid]="!validations.lastName"
+              />
+              <div class="error-message" *ngIf="!validations.lastName">
+                This field is required
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-12">
+            <div class="input-box">
+              <label for="email">Email Address</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter email"
+              />
+            </div>
+          </div>
+          <div class="col-md-6 col-12">
+            <div class="input-box">
+              <label for="mobile-number"
+                >Mobile Number <span class="info-option">(Optional)</span>
+              </label>
+              <input
+                type="text"
+                id="mobile-number"
+                name="mobile-number"
+                placeholder="Enter mobile number"
+              />
+            </div>
+          </div>
+          <div class="col-md-6 col-12">
+            <div class="input-box">
+              <label for="birth-date"
+                >Birth Date <span class="info-option">(Optional)</span>
+              </label>
+              <input
+                type="date"
+                id="birth-date"
+                name="birth-date"
+                placeholder=" "
+              />
+            </div>
+          </div>
+          <div class="col-md-6 col-12">
+            <div class="input-box">
+              <label for="gender"
+                >Gender <span class="info-option">(Optional)</span>
+              </label>
+              <div class="gender-options">
+                <label class="gender-option">
+                  <input type="radio" name="gender" value="male" /> Male
+                </label>
+                <label class="gender-option">
+                  <input type="radio" name="gender" value="female" /> Female
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-12 upload-container">
+        <div class="upload-photo-box">
+          <div class="upload-photo-circle">
+            <img
+              [src]="imageUrl || 'path/to/default/icon.png'"
+              alt="Profile Image"
+              *ngIf="imageUrl"
+            />
+            <i class="fas fa-user" *ngIf="!imageUrl"></i>
+          </div>
+          <div class="upload-label-wrapper">
+            <label for="upload-photo" class="upload-label">Upload Photo</label>
+          </div>
+          <input
+            type="file"
+            id="upload-photo"
+            name="upload-photo"
+            (change)="previewImage($event)"
+            class="d-none"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Following sections with closer spacing -->
+<div class="basic-info-container">
+  <div class="header">Categories</div>
+  <div class="content">
+    <div class="row">
+      <div class="col-md-3 col-12">
+        <div class="input-box">
+          <label for="category1"
+            >Category 1 <span class="category-option">(Optional)</span></label
+          >
+          <input type="text" id="category1" name="category1" placeholder="" />
+        </div>
+      </div>
+      <div class="col-md-3 col-12">
+        <div class="input-box">
+          <label for="category2"
+            >Category 2 <span class="category-option">(Optional)</span></label
+          >
+          <input type="text" id="category2" name="category2" placeholder="" />
+        </div>
+      </div>
+      <div class="col-md-3 col-12">
+        <div class="input-box">
+          <label for="category3"
+            >Category 3 <span class="category-option">(Optional)</span></label
+          >
+          <input type="text" id="category3" name="category3" placeholder="" />
+        </div>
+      </div>
+      <div class="col-md-3 col-12">
+        <div class="input-box">
+          <label for="category4"
+            >Category 4 <span class="category-option">(Optional)</span></label
+          >
+          <input type="text" id="category4" name="category4" placeholder="" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="basic-info-container">
+  <div class="header">System</div>
+  <div class="content">
+    <div class="row">
+      <div class="col-md-3 col-12">
+        <div class="input-box">
+          <label for="registration-date"
+            >Registration Date
+            <span class="info-option">(Optional)</span></label
+          >
+          <input type="date" id="registration-date" name="registration-date" />
+        </div>
+      </div>
+      <div class="col-md-3 col-12">
+        <div class="input-box">
+          <label for="subscription-expiration-date"
+            >Subscription Expiration Date
+            <span class="info-option">(Optional)</span></label
+          >
+          <input
+            type="date"
+            id="subscription-expiration-date"
+            name="subscription-expiration-date"
+          />
+        </div>
+      </div>
+      <div class="col-md-3 col-12">
+        <div class="input-box">
+          <label for="registration-code"
+            >Registration Code
+            <span class="info-option">(Optional)</span></label
+          >
+          <input
+            type="text"
+            id="registration-code"
+            name="registration-code"
+            placeholder=""
+          />
+        </div>
+      </div>
+      <div class="col-md-3 col-12">
+        <div class="input-box">
+          <label for="id">ID <span class="info-option">(Optional)</span></label>
+          <input type="text" id="id" name="id" placeholder="" />
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="input-box role-container">
+          <div class="role-label-wrapper">
+            <label>Role</label>
+            <div class="error-message" *ngIf="!validations.role">
+              <i class="fas fa-exclamation-circle"></i> At least one role is
+              required
+            </div>
+          </div>
+          <div class="gender-options roles">
+            <label class="role-item">
+              <input
+                type="checkbox"
+                name="role"
+                value="system-admin"
+                (change)="handleRoleChange($event)"
+              />
+              System admin
+            </label>
+            <label class="role-item">
+              <input
+                type="checkbox"
+                name="role"
+                value="exam-manager"
+                (change)="handleRoleChange($event)"
+              />
+              Exam Manager
+            </label>
+            <label class="role-item">
+              <input
+                type="checkbox"
+                name="role"
+                value="supervisor"
+                (change)="handleRoleChange($event)"
+              />
+              Supervisor
+            </label>
+            <label class="role-item">
+              <input
+                type="checkbox"
+                name="role"
+                value="subject-creator"
+                (change)="handleRoleChange($event)"
+              />
+              Subject creator
+            </label>
+            <label class="role-item">
+              <input
+                type="checkbox"
+                name="role"
+                value="item-creator"
+                (change)="handleRoleChange($event)"
+              />
+              Item Creator
+            </label>
+            <label class="role-item">
+              <input
+                type="checkbox"
+                name="role"
+                value="exam-creator"
+                (change)="handleRoleChange($event)"
+              />
+              Exam creator
+            </label>
+            <label class="role-item">
+              <input
+                type="checkbox"
+                name="role"
+                value="reviewer"
+                (change)="handleRoleChange($event)"
+              />
+              Reviewer
+            </label>
+            <label class="role-item">
+              <input
+                type="checkbox"
+                name="role"
+                value="examinee"
+                (change)="handleRoleChange($event)"
+              />
+              Examinee
+            </label>
+          </div>
+          <div class="examinee-message" *ngIf="showExamineeMessage">
+            <i class="fas fa-info-circle examinee-icon"></i>
+            Another role can’t be selected when examinee role is checked
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="basic-info-container">
+  <div class="header">Security</div>
+  <div class="content">
+    <div class="row">
+      <div class="col-12">
+        <div class="security-message">
+          <i class="fas fa-info-circle examinee-icon"></i>
+          Note: User will receive an email with his password once created.
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <label class="checkbox-label">
+          <input
+            type="checkbox"
+            id="auto-generate-password"
+            (change)="togglePasswordFields($event)"
+          />
+          System will auto generate the password
+        </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <label class="checkbox-label">
+          <input type="checkbox" id="reset-password" />
+          Reset password on the first login
+        </label>
+      </div>
+    </div>
+    <div class="row security-row">
+      <div class="input-box">
+        <label for="password">Password</label>
+        <div class="input-group">
+          <input
+            type="password"
+            id="password"
+            placeholder="Enter password"
+            (input)="toggleClearButton()"
+          />
+          <i
+            class="fas fa-eye password-toggle"
+            (click)="togglePasswordVisibility('password')"
+          ></i>
+        </div>
+      </div>
+      <div class="input-box">
+        <label for="confirm-password">Confirm Password</label>
+        <div class="input-group">
+          <input
+            type="password"
+            id="confirm-password"
+            placeholder="Confirm password"
+          />
+          <i
+            class="fas fa-eye password-toggle"
+            (click)="togglePasswordVisibility('confirm-password')"
+          ></i>
+        </div>
+      </div>
+      <button
+        class="btn-clear"
+        (click)="clearPasswordFields()"
+        [disabled]="!isClearEnabled"
+      >
+        Clear
+      </button>
+      <button class="btn-generate" (click)="generatePassword()">
+        Generate Password
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,73 @@
+/* src/app/core/site-header/site-header.component.css */
+
+.site-header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: 70px; /* Increase the header height */
+}
+
+.logo-and-menu {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo img {
+  height: 40px;
+}
+
+.user-profile-and-language {
+  display: flex;
+  align-items: center;
+  height: 100%; /* Ensure the profile and language divs span the full height */
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 0 25px;
+  height: 100%; /* Ensure it spans the full height of the header */
+}
+
+.user-profile img {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.user-profile .user-name {
+  margin-right: 5px;
+  color: #808080;
+}
+
+.language-selection {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 0 25px;
+  border-left: 1px solid #e0e0e0; /* Add a left border to separate the sections */
+  height: 100%; /* Ensure it spans the full height of the header */
+}
+
+.language-selection span {
+  margin-right: 5px;
+  color: #808080;
+}
+
+.language-selection i {
+  color: #808080;
+}

@@ -1,0 +1,63 @@
+.user-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+  background-color: white;
+  border-bottom: 3px solid #e0e0e0;
+  width: calc(100% - 80px); /* Adjust width considering the sidebar width */
+  position: fixed; /* Fix to the top */
+  left: 80px; /* Offset from the left to align with sidebar */
+  top: 70px; /* Position below the header */
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  z-index: 100; /* Ensure it’s on top of other elements */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.user-header h2 {
+  font-size: 14px;
+  font-weight: 700;
+  color: #465061;
+  margin: 0;
+}
+
+.user-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.user-actions .btn {
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 4px;
+  padding: 8px 15px;
+}
+
+.user-actions .import-action-btn {
+  background-color: white;
+  color: #007bff;
+  border: 1px solid #007bff;
+}
+
+.user-actions .import-action-btn:hover {
+  background-color: #e9ecef;
+  color: #0056b3;
+  border-color: #0056b3;
+}
+
+.user-actions .create-user-btn {
+  background-color: #007bff;
+  color: white;
+}
+
+.user-actions .create-user-btn:hover {
+  background-color: #0056b3;
+}
+
+.main-content {
+  margin-top: 120px; /* Adjust according to the height of the header and user-header */
+  padding-left: 80px; /* Adjust to avoid overlapping with sidebar */
+  padding-right: 0; /* No padding on the right */
+  box-sizing: border-box;
+}

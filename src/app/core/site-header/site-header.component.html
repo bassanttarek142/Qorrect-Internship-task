@@ -1,0 +1,18 @@
+<div class="site-header-container">
+  <div class="logo-and-menu">
+    <app-menu (menuToggled)="toggleSidebar()"></app-menu>
+    <div class="logo">
+      <img [src]="logopath" alt="Qorrect Logo" />
+    </div>
+  </div>
+  <div class="user-profile-and-language">
+    <div class="user-profile">
+      <img [src]="imagepath" alt="User Profile" class="profile-image" />
+      <span class="user-name">Bassant all roles</span>
+    </div>
+    <div class="language-selection">
+      <span>EN</span>
+      <i class="fa fa-caret-down"></i>
+    </div>
+  </div>
+</div>
