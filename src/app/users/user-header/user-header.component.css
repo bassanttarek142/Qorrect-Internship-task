@@ -72,25 +72,25 @@
 
 .user-tabs a {
   font-size: 16px;
-  font-weight: bold;
+  font-weight: bold; /* Maintain bold text */
   color: #75849b;
   text-decoration: none;
   padding: 10px;
   border-bottom: 2px solid transparent;
-  margin-top: 5px;
+  margin-top: 5px; /* Maintain margin from your original design */
 }
 
 /* Active tab style */
 .user-tabs a.active {
-  color: #007bff;
+  color: #007bff; /* Active color */
 }
 
-
+/* Hover effect for tabs */
 .user-tabs a:hover {
-  color: #007bff;
+  color: #007bff; /* Set hover color to #007bff */
 }
 
-
+/* Additional adjustments for navbar links */
 .navbar-nav .nav-link {
   padding-right: 0;
   padding-left: 0;
