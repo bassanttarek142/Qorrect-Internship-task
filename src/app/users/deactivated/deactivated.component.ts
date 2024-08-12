@@ -3,7 +3,6 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { FilterComponent } from '../filter/filter.component';
 
-
 interface User {
   fullName: string;
   email: string;
@@ -66,12 +65,14 @@ export class DeactivatedComponent implements OnInit {
   selectedUsersCount = 0;
 
   ngOnInit() {
-    this.filteredUsers = this.users.map((user) => ({
-      ...user,
-      initials: this.getInitials(user.fullName),
-      bgColor: user.bgColor || this.getRandomColor(),
-    }));
-    this.totalCount = this.users.length;
+    this.filteredUsers = this.users
+      .filter(user => !user.isActive)
+      .map((user) => ({
+        ...user,
+        initials: this.getInitials(user.fullName),
+        bgColor: user.bgColor || this.getRandomColor(),
+      }));
+    this.totalCount = this.filteredUsers.length;
     this.filteredCount = this.totalCount;
   }
 
@@ -105,6 +106,7 @@ export class DeactivatedComponent implements OnInit {
   toggleActivation(user: any) {
     user.isActive = true;
     console.log('Activating user:', user);
+    // Additional logic can be added here to handle the activation process
   }
 
   toggleSelectAll(event: any) {

@@ -33,7 +33,8 @@
       <div class="item">{{ user.email }}</div>
       <div class="item">{{ user.mobileNumber || "-" }}</div>
       <div class="item">{{ user.gender === 1 ? "Male" : "Female" }}</div>
-      <div class="item">{{ user.roles.join(", ") }}</div>
+      <div class="item">{{ user.roleCount }} Roles</div>
+      <!-- Displaying role count -->
       <div class="item">{{ user.lastLogin || "-" }}</div>
       <div class="item">{{ user.isVerified ? "✔️" : "-" }}</div>
       <div class="menu">
