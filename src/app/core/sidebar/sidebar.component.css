@@ -6,7 +6,7 @@
   height: calc(100% - 70px);
   background-color: #fff;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-  overflow-y: auto; /* Enable vertical scrolling */
+  overflow-y: auto;
   transition: width 0.3s ease;
   z-index: 1000;
   display: flex;
@@ -22,7 +22,7 @@
   padding: 0;
   margin: 0;
   flex-grow: 1;
-  overflow-y: auto; /* Allow the navigation items to scroll */
+  overflow-y: auto;
 }
 
 .sidebar-nav li {
@@ -90,23 +90,23 @@
   letter-spacing: 1px;
 }
 
-/* Version QA specific styling */
+
 .sidebar-nav li.version-qa {
-  margin-top: auto; /* Push to the bottom */
+  margin-top: auto;
   padding: 8px 15px;
-  font-weight: 200; /* Set to 200 */
+  font-weight: 200;
   color: #A0AEC0;
   text-transform: uppercase;
-  font-size: 10px; /* Decreased font size */
+  font-size: 10px;
   letter-spacing: 1px;
-  border-top: 1px solid #e0e0e0; /* Separate from the last category */
-  text-align: center; /* Center align text when collapsed */
+  border-top: 1px solid #e0e0e0;
+  text-align: center;
 }
 
 .sidebar-footer {
   padding: 5px 10px;
   color: #A0AEC0;
-  font-size: 8px; /* Decreased font size */
+  font-size: 8px;
   text-align: center;
   border-top: 1px solid #e0e0e0;
   margin-top: auto;
@@ -128,7 +128,7 @@
 
 .sidebar:not(.open) .sidebar-footer span {
   display: inline-block;
-  font-size: 8px; /* Decreased font size */
+  font-size: 8px;
   text-align: center;
   white-space: nowrap;
 }

@@ -91,7 +91,6 @@
   margin-top: 10px;
 }
 
-/* Add lines between different categories, but not under the category name itself */
 .sidebar-nav li:not(.category) + li.category {
   border-top: 1px solid #e0e0e0;
 }
@@ -106,7 +105,7 @@
   margin-top: auto;
 }
 
-/* Special style for the Dashboard category */
+
 .sidebar-nav li:first-child.category {
   margin-top: 0;
   border-top: 1px solid #e0e0e0;
