@@ -1,4 +1,4 @@
-<app-filter></app-filter>
+<app-filter (filterChange)="onFilterChange($event)"></app-filter>
 <div class="deactivate-container">
   <div class="user-list-container">
     <div class="user-list-header">
@@ -15,7 +15,7 @@
       <div class="header-item">Verified</div>
     </div>
 
-    <div *ngFor="let user of users" class="user-item">
+    <div *ngFor="let user of filteredUsers" class="user-item">
       <div class="checkbox">
         <input
           type="checkbox"
@@ -42,7 +42,7 @@
         </div>
         <div class="menu-content" [class.active]="user.showMenu">
           <div (click)="toggleActivation(user)" class="deactivate">
-            {{ user.isActive ? "Deactivate" : "Activate" }}
+            Activate
           </div>
         </div>
       </div>

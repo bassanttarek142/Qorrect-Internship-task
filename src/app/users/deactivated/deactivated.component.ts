@@ -3,6 +3,22 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { FilterComponent } from '../filter/filter.component';
 
+
+interface User {
+  fullName: string;
+  email: string;
+  mobileNumber: string | null;
+  gender: number;
+  roles: string[];
+  lastLogin: string | null;
+  isVerified: boolean;
+  selected: boolean;
+  showMenu: boolean;
+  initials: string;
+  bgColor: string;
+  isActive: boolean;
+}
+
 @Component({
   selector: 'app-deactivate',
   standalone: true,
@@ -11,7 +27,7 @@ import { FilterComponent } from '../filter/filter.component';
   styleUrls: ['./deactivated.component.css'],
 })
 export class DeactivatedComponent implements OnInit {
-  users = [
+  users: User[] = [
     {
       fullName: 'student two',
       email: 'student2@xyz.com',
@@ -24,7 +40,7 @@ export class DeactivatedComponent implements OnInit {
       showMenu: false,
       initials: 'ST',
       bgColor: '#F0DD7E',
-      isActive: false, // Set to false for deactivated users
+      isActive: false,
     },
     {
       fullName: 'salah examinee',
@@ -38,19 +54,25 @@ export class DeactivatedComponent implements OnInit {
       showMenu: false,
       initials: 'SE',
       bgColor: '#007bff',
-      isActive: false, // Set to false for deactivated users
+      isActive: false,
     },
-    // More users...
+
   ];
+
+  filteredUsers: User[] = [];
+  totalCount = 0;
+  filteredCount = 0;
   selectAllChecked = false;
-  selectedUsersCount = 0; // To keep track of selected users
+  selectedUsersCount = 0;
 
   ngOnInit() {
-    this.users = this.users.map((user) => ({
+    this.filteredUsers = this.users.map((user) => ({
       ...user,
       initials: this.getInitials(user.fullName),
       bgColor: user.bgColor || this.getRandomColor(),
     }));
+    this.totalCount = this.users.length;
+    this.filteredCount = this.totalCount;
   }
 
   getInitials(name: string): string {
@@ -81,18 +103,37 @@ export class DeactivatedComponent implements OnInit {
   }
 
   toggleActivation(user: any) {
-    user.isActive = true; // Only activation is allowed
+    user.isActive = true;
     console.log('Activating user:', user);
   }
 
   toggleSelectAll(event: any) {
     this.selectAllChecked = event.target.checked;
-    this.users.forEach((user) => (user.selected = this.selectAllChecked));
-    this.checkSelection(); // Update selection count
+    this.filteredUsers.forEach((user) => (user.selected = this.selectAllChecked));
+    this.checkSelection();
   }
 
   checkSelection() {
-    const selectedUsers = this.users.filter((user) => user.selected);
+    const selectedUsers = this.filteredUsers.filter((user) => user.selected);
     this.selectedUsersCount = selectedUsers.length;
+  }
+
+  onFilterChange(filters: any): void {
+    this.filteredUsers = this.users.filter((user) => {
+      const matchesSearch =
+        !filters.search ||
+        user.fullName.toLowerCase().includes(filters.search.toLowerCase()) ||
+        user.email.toLowerCase().includes(filters.search.toLowerCase());
+      const matchesGender =
+        !filters.gender || (filters.gender === 'male' && user.gender === 1) || (filters.gender === 'female' && user.gender === 2);
+      const matchesRole =
+        !filters.role || user.roles.includes(filters.role);
+      const matchesStatus =
+        !filters.status || (filters.status === 'verified' && user.isVerified) || (filters.status === 'not-verified' && !user.isVerified);
+
+      return matchesSearch && matchesGender && matchesRole && matchesStatus;
+    });
+
+    this.filteredCount = this.filteredUsers.length;
   }
 }
