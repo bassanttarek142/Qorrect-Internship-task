@@ -13,11 +13,12 @@
   </div>
 </div>
 
-<!-- Navigation within a <nav> element -->
-<nav>
-  <a class="nav-link" [routerLink]="['/users/activate']">Active</a>
-  <a class="nav-link" [routerLink]="['/users/deactivated']">Deactivated</a>
-</nav>
+<div *ngIf="showTabs" class="user-tabs">
+  <a class="nav-link" routerLink="activate" routerLinkActive="active">Active</a>
+  <a class="nav-link" routerLink="deactivated" routerLinkActive="active"
+    >Deactivated</a
+  >
+</div>
 
-<!-- Router outlet to display the routed components -->
 <router-outlet></router-outlet>
+<!-- This will load the ActivateComponent or DeactivatedComponent -->

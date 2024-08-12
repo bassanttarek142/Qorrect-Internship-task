@@ -61,3 +61,37 @@
   padding-right: 0; /* No padding on the right */
   box-sizing: border-box;
 }
+
+/* Adjusted styles for the tabs with increased margin from sidebar */
+.user-tabs {
+  margin-top: 150px; /* Adjust based on your layout */
+  padding-left: 100px; /* Increased padding from the sidebar */
+  display: flex;
+  gap: 20px;
+}
+
+.user-tabs a {
+  font-size: 16px; /* Font size consistent with the previous code */
+  font-weight: bold; /* Maintain bold text */
+  color: #75849b; /* Original color from your provided CSS */
+  text-decoration: none;
+  padding: 10px;
+  border-bottom: 2px solid transparent;
+  margin-top: 5px; /* Maintain margin from your original design */
+}
+
+/* Active tab style */
+.user-tabs a.active {
+  color: #007bff; /* Active color */
+}
+
+/* Hover effect for tabs */
+.user-tabs a:hover {
+  color: #007bff; /* Set hover color to #007bff */
+}
+
+/* Additional adjustments for navbar links */
+.navbar-nav .nav-link {
+  padding-right: 0;
+  padding-left: 0;
+}

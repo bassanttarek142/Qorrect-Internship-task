@@ -1,0 +1,54 @@
+<div class="filter-container">
+  <div class="filter-info">
+    <div class="filters">Filters</div>
+    <div class="showing">Showing {{ filteredCount }} of {{ totalCount }}</div>
+  </div>
+  <div class="filter-items">
+    <div class="filter-item input-container">
+      <input
+        type="text"
+        placeholder="Full Name or Email Address"
+        [(ngModel)]="filters.search"
+        (input)="onFilterChange()"
+      />
+      <button>
+        <i class="fa fa-search"></i>
+      </button>
+    </div>
+    <div class="filter-item">
+      <select [(ngModel)]="filters.gender" (change)="onFilterChange()">
+        <option value="">All Genders</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+    </div>
+    <div class="filter-item">
+      <select [(ngModel)]="filters.role" (change)="onFilterChange()">
+        <option value="">All Roles</option>
+        <option value="system-admin">System admin</option>
+        <option value="exam-manager">Exam Manager</option>
+        <option value="supervisor">Supervisor</option>
+        <option value="subject-creator">Subject creator</option>
+        <option value="exam-creator">Exam Creator</option>
+        <option value="reviewer">Reviewer</option>
+        <option value="examinee">Examinee</option>
+      </select>
+    </div>
+    <div class="filter-item">
+      <select [(ngModel)]="filters.status" (change)="onFilterChange()">
+        <option value="">All Statuses</option>
+        <option value="verified">Verified</option>
+        <option value="not-verified">Not yet</option>
+      </select>
+    </div>
+    <div class="filter-item">
+      <button
+        class="clear-button"
+        (click)="clearFilters()"
+        [disabled]="!isClearEnabled"
+      >
+        Clear
+      </button>
+    </div>
+  </div>
+</div>

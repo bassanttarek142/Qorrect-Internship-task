@@ -1,4 +1,54 @@
+<app-filter></app-filter>
 <div class="activate-container">
-  <p>Active Users</p>
-  <!-- Your content here -->
+  <div class="user-list-container">
+    <div class="user-list-header">
+      <div class="checkbox">
+        <input type="checkbox" (change)="toggleSelectAll($event)" />
+      </div>
+      <div></div>
+      <div class="header-item">Full name</div>
+      <div class="header-item">Email</div>
+      <div class="header-item">Mobile Number</div>
+      <div class="header-item">Gender</div>
+      <div class="header-item">Role</div>
+      <div class="header-item">Last Login</div>
+      <div class="header-item">Verified</div>
+    </div>
+
+    <div *ngFor="let user of users" class="user-item">
+      <div class="checkbox">
+        <input
+          type="checkbox"
+          [(ngModel)]="user.selected"
+          (change)="checkSelection()"
+        />
+      </div>
+      <div
+        class="initials-circle"
+        [ngStyle]="{ 'background-color': user.bgColor }"
+      >
+        {{ user.initials }}
+      </div>
+      <div class="item">{{ user.fullName }}</div>
+      <div class="item">{{ user.email }}</div>
+      <div class="item">{{ user.mobileNumber || "-" }}</div>
+      <div class="item">{{ user.gender === 1 ? "Male" : "Female" }}</div>
+      <div class="item">{{ user.roles.join(", ") }}</div>
+      <div class="item">{{ user.lastLogin || "-" }}</div>
+      <div class="item">{{ user.isVerified ? "✔️" : "-" }}</div>
+      <div class="menu">
+        <div class="action-box border-sm-0" (click)="toggleMenu(user)">
+          <i class="fas fa-ellipsis-v"></i>
+        </div>
+        <div class="menu-content" [class.active]="user.showMenu">
+          <div (click)="viewDetails(user)">View Details</div>
+          <div (click)="editUser(user)">Edit</div>
+          <div (click)="assignEnroll(user)">Assign / Enroll</div>
+          <div (click)="toggleActivation(user)" class="deactivate">
+            {{ user.isActive ? "Deactivate" : "Activate" }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
