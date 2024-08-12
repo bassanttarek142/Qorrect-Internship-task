@@ -1251,7 +1251,11 @@ export class ActivateComponent implements OnInit {
 
     const matchesRole =
       !filters.role ||
-      user.roles.some(role => role.toLowerCase() === filters.role.toLowerCase());
+      user.roles.some(role => {
+
+        const mappedRole = role.toLowerCase() === 'student' ? 'examinee' : role.toLowerCase();
+        return mappedRole === filters.role.toLowerCase();
+      });
 
     const matchesStatus =
       !filters.status ||
