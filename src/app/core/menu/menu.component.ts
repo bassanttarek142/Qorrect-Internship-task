@@ -23,6 +23,6 @@ export class MenuComponent implements OnInit {
   toggleMenu() {
     this.menuOpen = !this.menuOpen;
     console.log('Menu toggled:', this.menuOpen);
-    this.menuToggled.emit(this.menuOpen); // Emit the event with the current state
+    this.menuToggled.emit(this.menuOpen);
   }
 }

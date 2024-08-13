@@ -9,9 +9,9 @@ import { Component, Input, HostListener } from '@angular/core';
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent {
-  @Input() isOpen = false; // Sidebar open state
-  private isMouseOver = false; // Track if mouse is currently over the sidebar
-  private isExplicitlyToggled = false; // Track if the sidebar was explicitly toggled by a click
+  @Input() isOpen = false;
+  private isMouseOver = false;
+  private isExplicitlyToggled = false;
 
   // Toggle sidebar on menu click
   toggleSidebar() {

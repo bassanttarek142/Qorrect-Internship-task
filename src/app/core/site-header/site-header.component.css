@@ -1,4 +1,3 @@
-/* src/app/core/site-header/site-header.component.css */
 
 .site-header-container {
   display: flex;
@@ -13,7 +12,7 @@
   left: 0;
   right: 0;
   z-index: 1000;
-  height: 70px; /* Increase the header height */
+  height: 70px;
 }
 
 .logo-and-menu {
@@ -29,7 +28,7 @@
 .user-profile-and-language {
   display: flex;
   align-items: center;
-  height: 100%; /* Ensure the profile and language divs span the full height */
+  height: 100%;
 }
 
 .user-profile {
@@ -38,7 +37,7 @@
   cursor: pointer;
   font-size: 14px;
   padding: 0 25px;
-  height: 100%; /* Ensure it spans the full height of the header */
+  height: 100%;
 }
 
 .user-profile img {
@@ -59,8 +58,8 @@
   cursor: pointer;
   font-size: 14px;
   padding: 0 25px;
-  border-left: 1px solid #e0e0e0; /* Add a left border to separate the sections */
-  height: 100%; /* Ensure it spans the full height of the header */
+  border-left: 1px solid #e0e0e0;
+  height: 100%;
 }
 
 .language-selection span {

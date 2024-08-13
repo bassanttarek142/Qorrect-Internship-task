@@ -91,11 +91,12 @@
   margin-top: 10px;
 }
 
+
 .sidebar-nav li:not(.category) + li.category {
   border-top: 1px solid #e0e0e0;
 }
 
-/* Ensure footer stays at the bottom */
+
 .sidebar-footer {
   padding: 5px 10px;
   color: #A0AEC0;
